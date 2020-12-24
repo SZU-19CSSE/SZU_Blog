@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Blog - Content Manager</title>
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="/admin/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/css/base.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <!-- 网站标志 -->
         <div class="logo fl">
             <div class="logo fl">
-              黑马程序员 <i>ITHEIMA</i>
+                黑马程序员 <i>ITHEIMA</i>
             </div>
         </div>
         <!-- /网站标志 -->
@@ -42,14 +42,12 @@
             <ul class="menu list-unstyled">
                 <li>
                     <a class="item active" href="user.html">
-                        <span class="glyphicon glyphicon-user"></span>
-                        用户管理
+                        <span class="glyphicon glyphicon-user"></span> 用户管理
                     </a>
                 </li>
                 <li>
                     <a class="item" href="article.html">
-                        <span class="glyphicon glyphicon-th-list"></span>
-                        文章管理
+                        <span class="glyphicon glyphicon-th-list"></span> 文章管理
                     </a>
                 </li>
             </ul>
@@ -99,8 +97,8 @@
         </div>
     </div>
     <!-- /主体内容 -->
-    <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/admin/lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

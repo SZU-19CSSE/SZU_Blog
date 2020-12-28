@@ -7,6 +7,14 @@ const admin = express.Router()
 admin.get('/login', (req, res) => {
     res.render('admin/login')
 });
+// //创建用户列表路由
+// admin.get('/user', (req, res) => {
+//     res.render('admin/user')
+// });
+admin.get('/article', (req, res) => {
+    res.render('admin/article')
+});
+
 
 //将路由对象做为模块成员进行导出
 module.exports = admin;

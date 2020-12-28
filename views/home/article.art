@@ -16,7 +16,7 @@
 			</h1>
 			<!-- 网站logo结束 -->
 			<!-- 网站导航开始 -->
-			<ul class="navigation fr">
+			<ul class="navigation fr">	
 				<li>
 					<a href="index.html">首页</a>
 				</li>

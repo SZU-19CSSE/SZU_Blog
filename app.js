@@ -3,10 +3,16 @@ const express = require('express');
 
 //处理路径
 const path = require('path');
-
+//引入body-parser模块 用来处理post请求参数
+const bodyPaser= require('body-parser');
 
 //创建网站服务器
 const app = express();
+//数据库连接
+require('./model/connect');
+//处理post请求参数
+app.use(bodyPaser.urlencoded({extended:false}))
+// require('./model/user');
 
 
 //告诉express框架模板所在位置
@@ -22,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //引入路由模块
 const home = require('./route/home');
 const admin = require('./route/admin');
-
 //为路由匹配请求路径
 app.use('/home', home);
 app.use('/admin', admin);

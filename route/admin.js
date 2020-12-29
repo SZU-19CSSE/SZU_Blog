@@ -8,13 +8,15 @@ admin.post('/login', (req, res) => {
   //接受请求参数
   const{email,password}=req.body;
   //验证输入的合法性，防止javascript失效
-  if(email.trim().length==0){
-      return res.status(400).send('<h4>邮件地址或者密码错误</h4>')
+  if(email.trim().length==0||password.trim().length==0){
+      return res.status(400).render('admin/error',{msg:'邮件地址或者密码错误'});
   }  
+  
 });
 admin.get('/login', (req, res) => {
     res.render('admin/login')
 });
+
 //创建用户列表路由
 admin.get('/user', (req, res) => {
     res.render('admin/user')

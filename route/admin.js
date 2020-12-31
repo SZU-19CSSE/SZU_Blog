@@ -27,6 +27,7 @@ admin.post('/login', async(req, res) => {
         //
         if(isValid){
             //登陆成功
+            req.session.username=user.username;
             res.send('登陆成功')
         }
         else {
@@ -46,7 +47,9 @@ admin.get('/login', (req, res) => {
 
 //创建用户列表路由
 admin.get('/user', (req, res) => {
-    res.render('admin/user')
+    res.render('admin/user',{
+        msg:req.session.username
+    });
 });
 admin.get('/article', (req, res) => {
     res.render('admin/article')

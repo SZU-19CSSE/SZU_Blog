@@ -5,7 +5,8 @@ const express = require('express');
 const path = require('path');
 //引入body-parser模块 用来处理post请求参数
 const bodyPaser= require('body-parser');
-
+//导入express-session模块
+const session=require('express-session')
 //创建网站服务器
 const app = express();
 //数据库连接
@@ -13,7 +14,8 @@ require('./model/connect');
 //处理post请求参数
 app.use(bodyPaser.urlencoded({extended:false}))
 // require('./model/user');
-
+//配置session
+app.use(session({secret:'secret key'}));
 
 //告诉express框架模板所在位置
 app.set('views', path.join(__dirname, 'views'));

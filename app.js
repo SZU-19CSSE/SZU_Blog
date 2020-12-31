@@ -29,7 +29,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //引入路由模块
 const home = require('./route/home');
+
 const admin = require('./route/admin');
+const { nextTick } = require('process');
+//拦截请求，判断用户登录状态
+
+app.use('/admin',require('./middleware/loginGuard'));
 //为路由匹配请求路径
 app.use('/home', home);
 app.use('/admin', admin);

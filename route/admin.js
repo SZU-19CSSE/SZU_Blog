@@ -2,6 +2,8 @@
 const express = require('express');
 //导入用户集合构造函数
 const {User}=require('../model/user')
+//导入bcrypt
+const bcrypt =require('bcrypt');
 //创建博客展示页面路由
 const admin = express.Router()
 //实现登陆功能
@@ -19,7 +21,11 @@ admin.post('/login', async(req, res) => {
    
    if(user){
         //将客户端传递过来的密码和用户信息中的密码进行比对
-        if(password==user.password){
+        //true比对成功
+        //false比对失败
+        let isValid=await bcrypt.compare(password,user.password);
+        //
+        if(isValid){
             //登陆成功
             res.send('登陆成功')
         }

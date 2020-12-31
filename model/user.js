@@ -38,7 +38,7 @@ const User=mongoose.model('User',userSchema);
 
 // User.create({
 //     username:'iteheima',
-//     email:'iteheima@itcast.cn',
+//     email:'itheima@itcast.cn',
 //     password:'123456',
 //     role:'admin',
 //     state:0
@@ -47,7 +47,7 @@ const User=mongoose.model('User',userSchema);
 // }).catch(()=>{
 //     console.log('用户创建失败')
 // })
- //将用户集合做为模块成员进行导出
+//  将用户集合做为模块成员进行导出
 module.exports={ 
     User
 };

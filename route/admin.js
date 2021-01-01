@@ -13,9 +13,9 @@ admin.get('/logout', require("./admin/logout"));
 //创建用户列表路由
 admin.get('/user', require('./admin/userPage'));
 //创建用户编辑页面路由
-admin.get('/user-edit', require('./admin/user-edit'))
-    //创建实现用户添加功能路由
-admin.post('/user-edit', require('./admin/user-edit-fn'))
+admin.get('/user-edit', require('./admin/user-edit'));
+//创建实现用户添加功能路由
+admin.post('/user-edit', require('./admin/user-edit-fn'));
 
 
 admin.get('/article', (req, res) => {

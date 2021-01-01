@@ -19,7 +19,8 @@ admin.post('/user-edit', require('./admin/user-edit-fn'));
 
 admin.post('/user-modify', require('./admin/user-modify'));
 
-
+//删除用户功能模块
+admin.get('/delete',require("./admin/user-delete"));
 admin.get('/article', (req, res) => {
     res.render('admin/article')
 });

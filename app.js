@@ -4,18 +4,18 @@ const express = require('express');
 //处理路径
 const path = require('path');
 //引入body-parser模块 用来处理post请求参数
-const bodyPaser= require('body-parser');
+const bodyPaser = require('body-parser');
 //导入express-session模块
-const session=require('express-session')
-//创建网站服务器
+const session = require('express-session')
+    //创建网站服务器
 const app = express();
 //数据库连接
 require('./model/connect');
 //处理post请求参数
-app.use(bodyPaser.urlencoded({extended:false}))
-// require('./model/user');
-//配置session
-app.use(session({secret:'secret key'}));
+app.use(bodyPaser.urlencoded({ extended: false }))
+    // require('./model/user');
+    //配置session
+app.use(session({ secret: 'secret key' }));
 
 //告诉express框架模板所在位置
 app.set('views', path.join(__dirname, 'views'));
@@ -34,10 +34,17 @@ const admin = require('./route/admin');
 const { nextTick } = require('process');
 //拦截请求，判断用户登录状态
 
-app.use('/admin',require('./middleware/loginGuard'));
+app.use('/admin', require('./middleware/loginGuard'));
 //为路由匹配请求路径
 app.use('/home', home);
 app.use('/admin', admin);
+
+app.use((err, req, res, next) => {
+    //将字符串对象转换为对象类型
+    //JSON.parse()
+    const result = JSON.parse(err);
+    res.redirect(`${result.path}?message=${result.message}`);
+})
 
 //监听端口
 app.listen(80);

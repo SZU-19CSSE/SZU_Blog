@@ -6,12 +6,8 @@ const path = require('path');
 //引入body-parser模块 用来处理post请求参数
 const bodyPaser = require('body-parser');
 //导入express-session模块
-const session = require('express-session');
-//导入art-template模板引擎
-const template = require('art-template');
-//导入dataformat第三方模块
-const dataformat = require('dataformat');
-//创建网站服务器
+const session = require('express-session')
+    //创建网站服务器
 const app = express();
 //数据库连接
 require('./model/connect');
@@ -27,8 +23,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'art');
 //当渲染模板后缀为art的模板时 所使用的模板引擎是什么
 app.engine('art', require('express-art-template'));
-//向模板内部导入dateformate变量
-template.defaults.imports.dataFormat = dataformat;
 
 //开放静态资源文件
 app.use(express.static(path.join(__dirname, 'public')));
@@ -57,7 +51,7 @@ app.use((err, req, res, next) => {
         }
     }
     res.redirect(`${result.path}?${params.join('&')}`);
-})
+}) 
 
 //监听端口
 app.listen(80);

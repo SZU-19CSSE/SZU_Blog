@@ -38,4 +38,4 @@ module.exports=async(req, res) => {
       res.status(400).render('admin/error',{msg:'邮件地址或者密码错误'});
      }
     
-  }
+  } 

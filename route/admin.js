@@ -21,10 +21,12 @@ admin.post('/user-modify', require('./admin/user-modify'));
 
 //删除用户功能模块
 admin.get('/delete',require("./admin/user-delete"));
-admin.get('/article', (req, res) => {
-    res.render('admin/article')
-});
-
+//文件列表页面路由
+admin.get('/article', require("./admin/article"));
+//文件编辑页面路由
+admin.get('/article-edit', require("./admin/article-edit"));
+//实现文章添加功能的路由
+admin.post('/article-add',require('./admin/article-add'))
 
 
 //将路由对象做为模块成员进行导出

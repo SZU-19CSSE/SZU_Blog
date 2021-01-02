@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 将文章集合的构造函数导入到当前文件中
 const { Article } = require('../../model/article');
 // 导入mongoose-sex-page模块
@@ -21,4 +22,10 @@ module.exports = async(req, res) => {
     res.render('admin/article.art', {
         articles: articles
     });
+=======
+module.exports=(req, res) => {
+        //标识 标识当前访问的是文章管理页面
+        req.app.locals.currentLink='article';
+    res.render('admin/article')
+>>>>>>> parent of 503eb86... 07-08
 }
